@@ -14,8 +14,8 @@ app.get('/test', (req, res) =>
   res.send('Das ist ein Test!')
 })
 
-app.use(express.static('public')) // Zugriff auf den Ordner public, der die Übung 5 enthält (möglich mit Express)
-//app.use('/static', express.static('public'))
+//app.use(express.static('public')) // Zugriff auf den Ordner public, der die Übung 5 enthält (möglich mit Express)
+app.use('/public', express.static('public'))
 //app.use('/static', express.static(path.join(__dirname, 'public')))
 
 

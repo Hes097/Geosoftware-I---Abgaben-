@@ -1,27 +1,16 @@
 {
-  "name": "geosoftware-i---abgaben-",
-  "version": "1.0.0",
-  "description": "This is my first package",
-  "main": "server.js",
+  "name": "geosoftware-i---abgaben",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "node server.js",
-    "start": "node server.js"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Hes097/Geosoftware-I---Abgaben-.git"
-  },
-  "keywords": [
-    "101",
-    "\"myfirstpackage\""
-  ],
-  "author": "Henning Sander", 
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Hes097/Geosoftware-I---Abgaben-/issues"
-  },
-  "homepage": "https://github.com/Hes097/Geosoftware-I---Abgaben-#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.16.4",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
   }
 }
