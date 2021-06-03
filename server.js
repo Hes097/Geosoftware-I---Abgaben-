@@ -9,7 +9,7 @@ server.listen(port, host) // where the sever should listen
 function handleRequest (req, res) 
 {
     res.writeHead(200, {'Content-Type': 'text/html'})
-    res.write("Hello")
+    res.write("Hallo")
     res.end()
 }
 
