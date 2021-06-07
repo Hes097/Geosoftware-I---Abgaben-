@@ -14,13 +14,13 @@ router.get('/', function(req, res, next) {
 });
 
 //Insert new data
-router.get('/', function(req, res, next) 
+router.post('/newperson', function(req, res, next) 
 {
   console.log("A new person has been added")
   console.log(req.body)
   let person = {}
   person.name = req.body.pname
-  person.address = req.body.cname 
+  person.address = req.body.padress
 
 
   //Connect to the mongodb database afterwards, insert one new element 
@@ -33,12 +33,12 @@ router.get('/', function(req, res, next)
     const db = client.db(dbName)
     const collection = db.collection(collectionName)
     //Insert the document in the database 
-    collection.insertOne(person, function(err, results)
+    collection.insertOne(person, function(err, result)
     {
       assert.equal(err, null)
       assert.equal(1, result.result.ok)
       //console.log(result)
-      console.log(`Inserted ${result.insertedCount} document intp the databse`)
+      console.log(`Inserted ${result.insertedCount} document into the databse`)
       res.render('2_add_notification', {title: 'Addition completed', data: person})
     })
 

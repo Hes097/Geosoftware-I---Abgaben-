@@ -4,24 +4,15 @@ block content
   h3 Welcome to #{title}
   br
   br 
-  form(action='/add/newpoi' method='post')
+  form(action='/add/newperson' method='post')
     fieldset
       .form-group.row
-        label.col-sm-1.col-form-label(for='poiname') POI Name
+        label.col-sm-1.col-form-label(for='personname') Person  Name
         .col-sm-4
-          input#poiname.form-control(type='text' name="pname" placeholder='Enter POI Name')
+          input#poiname.form-control(type='text' name="pname" placeholder='Enter Person Name')
       .form-group.row
-        label.col-sm-1.col-form-label(for='cityname') City Name
+        label.col-sm-1.col-form-label(for='adress') Adress
         .col-sm-4
-          input#cityname.form-control(type='text' name="cname" placeholder='Enter City Name')
-      .form-group.row
-        label.col-sm-1.col-form-label(for='coordinates') Coordinates
-        .col-sm-4
-          input#coordinates.form-control(type='text' aria-describedby='coordinatesHelp' name="longlat" placeholder='Enter Coordinates')
-          small#coordinatesHelp.form-text.text-muted Coordinates should follow the long/lat order.
-      .form-group.row
-        label.col-sm-1.col-form-label(for='picturelink') Link
-        .col-sm-4
-          input#picturelink.form-control(type='url' name="picurl" placeholder='Enter link to the picture')
+          input#cityname.form-control(type='text' name="cadress" placeholder='Enter Adress')
       button.btn.btn-primary.mb-2(type='submit') Send
 

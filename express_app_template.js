@@ -2,7 +2,7 @@ const express = require('express')
 //const path = require('path')
 
 const app = express()
-const port = 3000
+const port = 5000
 
 app.get('/', (req, res) => // get request mit definierter route
 {
@@ -15,7 +15,7 @@ app.get('/test', (req, res) =>
 })
 
 //app.use(express.static('public')) // Zugriff auf den Ordner public, der die Übung 5 enthält (möglich mit Express)
-app.use('/public', express.static('public'))
+//app.use('/public', express.static('public'))
 //app.use('/static', express.static(path.join(__dirname, 'public')))
 
 

@@ -8,7 +8,7 @@ const client = new MongoClient(url) // mongodb client
 
 const dbName = 'mydb' // database name
 
-const collectionName = 'test' // collection name
+const collectionName = 'newPersons' // collection name
 
 // Use connect method to connect to the server
 client.connect(function(err) 
@@ -29,13 +29,7 @@ client.connect(function(err)
   const collection = db.collection(collectionName)
 
   const data = [
-    {"type": "FeatureCollection", 
-  "features:": [
-    {"type": "Feature", 
-      "geometry": {"type": "Point", "coordinates": [7.628056, 51.96222]}, 
-      "properties": {
-        "cityname": "Münster"}}
-  ]}
+    { name: 'Paul', adress: 'Heisenbergstraße 2'}
   ]
 
   // insert new documents in my collection
