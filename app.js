@@ -8,9 +8,9 @@ var logger = require('morgan');
 //var usersRouter = require('./routes/users');
 
 //adding custom routes
-var searchRouter = require('./routes/1_search.js'); 
 var addRouter = require('./routes/2_add.js');
-var homeRouter = require('./routes/3_home.js');
+var indexRouter = require('./routes/4_index2.js')
+
 
 var app = express();
 
@@ -28,9 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use('/users', usersRouter);
 
 //adding custom routes
-app.use('/', homeRouter);
-app.use('/search', searchRouter); 
 app.use('/add', addRouter);  
+app.use('/', indexRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

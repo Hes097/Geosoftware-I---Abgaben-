@@ -1,10 +1,10 @@
 const express = require('express')
-//const path = require('path')
+const path = require('path')
 
 const app = express()
 const port = 5000
 
-app.get('/', (req, res) => // get request mit definierter route
+app.get('/test1', (req, res) => // get request mit definierter route
 {
   res.send('Hello World!')
 })

@@ -6,9 +6,9 @@ const url = 'mongodb://localhost:27017' // connection URL
 
 const client = new MongoClient(url) // mongodb client
 
-const dbName = 'mydb' // database name
+const dbName = 'Routes' // database name
 
-const collectionName = 'newPersons' // collection name
+const collectionName = 'newRoutes' // collection name
 
 // Use connect method to connect to the server
 client.connect(function(err) 
@@ -20,7 +20,7 @@ client.connect(function(err)
   const db = client.db(dbName)
   /*
     // create a collection 
-    db.createCollection(collectionName, function(err, res) 
+    db.createCollection(collectionName, function(err, res)
     {
         if (err) throw err
         console.log("Collection created!")
@@ -28,8 +28,38 @@ client.connect(function(err)
   */
   const collection = db.collection(collectionName)
 
+  // Mit Beispielroute im GeoJson Format
   const data = [
-    { name: 'Paul', adress: 'Heisenbergstraße 2'}
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                10.48095703125,
+                52.07950600379697
+              ],
+              [
+                11.689453125,
+                50.21909462044748
+              ],
+              [
+                8.7451171875,
+                50.05008477838256
+              ],
+              [
+                7.888183593749999,
+                51.385495069223204
+              ]
+            ]
+          }
+        }
+      ]
+    }
   ]
 
   // insert new documents in my collection

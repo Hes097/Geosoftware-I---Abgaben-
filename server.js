@@ -2,7 +2,7 @@ let http = require('http')
 let host = "localhost"
 let port = 3000 
 
-let server = http.createServer(handleRequest) // create a server 
+let server = http.createServer(handleRequest)// create a server 
 
 server.listen(port, host) // where the sever should listen 
 

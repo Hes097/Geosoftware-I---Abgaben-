@@ -4,15 +4,13 @@ block content
   h3 Welcome to #{title}
   br
   br 
-  form(action='/add/newperson' method='post')
+  br
+  form(action='/add/newroute' method='post')
     fieldset
       .form-group.row
-        label.col-sm-1.col-form-label(for='personname') Person  Name
+        label.col-sm-1.col-form-label(for='routegeojson') Route als GeoJson
         .col-sm-4
-          input#poiname.form-control(type='text' name="pname" placeholder='Enter Person Name')
-      .form-group.row
-        label.col-sm-1.col-form-label(for='adress') Adress
-        .col-sm-4
-          input#cityname.form-control(type='text' name="cadress" placeholder='Enter Adress')
+          input#type.form-control(type='text' name="rgeojson" placeholder='Enter your personal route as GeoJson')
       button.btn.btn-primary.mb-2(type='submit') Send
+
 
