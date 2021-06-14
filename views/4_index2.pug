@@ -18,12 +18,14 @@ head
     width: 100%;
     }
     }
+  // Jquery and jquery UI
+  script(src='https://code.jquery.com/jquery-3.6.0.min.js' integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' crossorigin='anonymous')
+  script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' crossorigin='anonymous')
   link(rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css')
   script(src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js')
   script(src='https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js' defer='')
-  script(src='https://code.jquery.com/jquery-3.6.0.min.js' integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' crossorigin='anonymous')
   script(src='route.js' defer='')
   script(src='leaflet.js' defer='')
   script(src='WeatherPopUp.js' defer='')
@@ -37,13 +39,13 @@ header
       #navbarNavDropdown.collapse.navbar-collapse
         ul.navbar-nav
           li.nav-item
-            a.nav-link.active(aria-current='page' href='#home') Home
+            a.nav-link(href= 'http://localhost:5000') Home
+          li.nav-item 
+            a.nav-link(href= 'http://localhost:5000/add') Neue Route
           li.nav-item
             a.nav-link(href='https://www.uni-muenster.de/Geoinformatics/') Institut
           li.nav-item
             a.nav-link(href='https://de.wikipedia.org/wiki/Hreflang') FAQ
-          li.nav-item 
-            a.nav-link(href= 'http://localhost:5000/add') Seite 2
           li.nav-item.dropdown
             a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#dropdownmenu' role='button' data-bs-toggle='dropdown' aria-expanded='false')
               | More
@@ -57,9 +59,8 @@ header
       button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
       form.d-flex
-        input.form-control.me-2(type='search' placeholder='Search (in progress)' aria-label='Search')
+        input#unsereDaten.form-control.me-2(type='search' placeholder='Search routes' aria-label='Search')
         button.btn.btn-outline-primary(type='submit') Search
-main.map-display
   #map(style='width: 800px; margin-left: auto; margin-right: auto;')
   .container-fluid
   p(style='text-align: center;')
@@ -87,6 +88,9 @@ main.map-display
             ul.d-flex.list-unstyled.mt-auto
               li.me-auto
                 img.rounded-circle.border.border-white(src='HS.jpg' width='32' height='32')
+  script. 
+    let geojson = !{JSON.stringify(data)}
+    console.log(geojson);
 footer.footer.mt-auto.py-3.bg-light
   .container
     span.text-muted

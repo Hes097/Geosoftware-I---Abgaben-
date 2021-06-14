@@ -11,7 +11,7 @@ const collectionName = 'newRoutes' // collection name --> muss noch geändert we
 
 /* GET add page. */
 router.get('/', function(req, res, next) {
-  res.render('2_add', { title: 'Add new route to the database' });
+  res.render('2_add', { title: 'Add your route to the datatbase!' });
 });
 
 //Insert new data
@@ -19,8 +19,9 @@ router.post('/newroute', function(req, res, next)
 {
   console.log("A new route has been added")
   console.log(req.body)
-  let route = {}
-  route.geojson = req.body.rgeojson
+  let route = JSON.parse(req.body.rgeojson)
+ // console.log(route)
+  //route.geojson = JSON.parse(req.body.rgeojson)
   //route.features = req.body.rfeatures
   // Wie erstelle ich hier das Dateiformat einer GeoJson??
   //route.geometry = req.body.rgeometry

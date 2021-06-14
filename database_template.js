@@ -31,6 +31,7 @@ client.connect(function(err)
   // Mit Beispielroute im GeoJson Format
   const data = [
     {
+      "name":"Route2",
       "type": "FeatureCollection",
       "features": [
         {
