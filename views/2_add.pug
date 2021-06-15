@@ -1,4 +1,6 @@
 block content
+  head 
+    title Leaflet Map
   link(rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css')
   script(src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css')
@@ -10,7 +12,6 @@ block content
   script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
   script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
-
   header
   nav#myFirstNavbar.navbar.navbar-expand-lg.navbar-light(style='background-color: #50a3e6;')
     .container-fluid
@@ -45,6 +46,12 @@ block content
     textarea(name='rgeojson' form='route' rows='15' cols='100' placeholder='Enter your personal route as GeoJson. Notice the information below!' autofocus='')
     input(type='submit') 
 
+
+  form#id(action= '/add' method='delete')
+    | Zu löschende Route: 
+    input(type='text' name='collection')
+    input(type='submit')
+
 // Button trigger modal
 button.btn.btn-primary(type='button' data-toggle='modal' data-target='#exampleModal')
   | Important information!!
@@ -61,6 +68,5 @@ button.btn.btn-primary(type='button' data-toggle='modal' data-target='#exampleMo
 
       .modal-footer
         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
-
 
  

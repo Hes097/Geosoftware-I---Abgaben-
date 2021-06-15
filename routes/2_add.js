@@ -53,4 +53,15 @@ router.post('/newroute', function(req, res, next)
 
 })
 
+router.delete('/add', (req, res) => {
+  var id = req.params.id; 
+  var collection = db.get().collection('newRoutes')
+
+  collection.deleteOne({_id: new mongo.ObjectId(id)}, function(err, results) {
+      console.log(err); 
+  }); 
+
+  res.json({ success: id })
+})
+
 module.exports = router;
